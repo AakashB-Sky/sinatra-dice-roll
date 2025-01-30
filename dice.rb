@@ -70,7 +70,7 @@ get("/dice/2/10") do
   end
   @outcome = outcome + "Total = #{dice_roll.sum}"
 
-  erb(:two_ten)
+  erb(:two_ten, {:layout => :wrapper})
 
 =begin # before using view templates
   "
@@ -100,7 +100,7 @@ get("/dice/1/20") do
   end
   @outcome = outcome + "Total = #{dice_roll.sum}"
 
-  erb(:one_twenty)
+  erb(:one_twenty,{:layout => :wrapper})
 
 =begin # before view templates
   "
@@ -129,7 +129,7 @@ get("/dice/60/6") do
   end
   @outcome = outcome + "Total = #{dice_roll.sum}"
 
-  erb(:sixty_six)
+  erb(:sixty_six, {:layout => :wrapper})
 
 =begin
   "
