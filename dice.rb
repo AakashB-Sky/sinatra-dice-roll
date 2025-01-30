@@ -41,7 +41,7 @@ get("/dice/2/6") do
 
   @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
 
-  erb(:two_six)
+  erb(:two_six, {:layout => :wrapper})
 
 =begin # before view templates
   "
