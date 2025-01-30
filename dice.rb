@@ -98,7 +98,7 @@ get("/dice/1/20") do
     counter = counter + 1
     outcome = outcome + "Roll # #{counter}: #{the_roll}<br>"
   end
-  outcome = outcome + "Total = #{dice_roll.sum}"
+  @outcome = outcome + "Total = #{dice_roll.sum}"
 
   erb(:one_twenty)
 
@@ -127,13 +127,15 @@ get("/dice/60/6") do
     counter = counter + 1
     outcome = outcome + "Roll # #{counter}: #{the_roll}<br>"
   end
-  outcome = outcome + "Total = #{dice_roll.sum}"
+  @outcome = outcome + "Total = #{dice_roll.sum}"
 
-  # "Test message"
+  erb(:sixty_six)
 
+=begin
   "
   <h1>60d6</h1>
   <h2>#{outcome}</h2>
   <p><a href=\"/\">Return to homepage</p>
   "
+=end
 end
