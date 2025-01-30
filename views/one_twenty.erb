@@ -1,5 +1,13 @@
 <h1>1d20</h1>
-<h2><%= @outcome %></h2>
+<h2>
+<% if @first_roll == 1 %>
+  <p style="color: red"><%= @outcome %>
+<% elsif @first_roll == 20 %>
+  <p style="color: green"><%= @outcome %>
+<% else %>
+  <%= @outcome %>
+<% end %>
+</h2>
 <p>
   <a href="/">Return to homepage</a>
 </p>

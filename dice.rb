@@ -41,7 +41,7 @@ get("/dice/2/6") do
 
   @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
 
-  erb(:two_six, {:layout => :wrapper})
+  erb(:two_six)
 
 =begin # before view templates
   "
@@ -70,7 +70,7 @@ get("/dice/2/10") do
   end
   @outcome = outcome + "Total = #{dice_roll.sum}"
 
-  erb(:two_ten, {:layout => :wrapper})
+  erb(:two_ten)
 
 =begin # before using view templates
   "
@@ -99,8 +99,9 @@ get("/dice/1/20") do
     outcome = outcome + "Roll # #{counter}: #{the_roll}<br>"
   end
   @outcome = outcome + "Total = #{dice_roll.sum}"
+  @first_roll = dice_roll[0]
 
-  erb(:one_twenty,{:layout => :wrapper})
+  erb(:one_twenty)
 
 =begin # before view templates
   "
@@ -129,7 +130,7 @@ get("/dice/60/6") do
   end
   @outcome = outcome + "Total = #{dice_roll.sum}"
 
-  erb(:sixty_six, {:layout => :wrapper})
+  erb(:sixty_six)
 
 =begin
   "
