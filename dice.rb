@@ -9,8 +9,10 @@ BetterErrors.application_root = __dir__
 BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 
 get("/") do
+  erb(:elephant)
+=begin # old code, without using view templates
   "
-  <h1>Let's roll some dice!
+  <h1>Let's roll some dice!</hi>
   <ul>
     <li>
       <a href=\"/dice/2/6\">Roll two 6-sided dice</a>
@@ -26,6 +28,9 @@ get("/") do
     </li>
   </ul>
   "
+=end
+
+  # "This overwrite the previous HTML because it's the last string literal."
 end
 
 
