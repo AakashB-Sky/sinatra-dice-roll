@@ -100,13 +100,15 @@ get("/dice/1/20") do
   end
   outcome = outcome + "Total = #{dice_roll.sum}"
 
-  # "Test message"
+  erb(:one_twenty)
 
+=begin # before view templates
   "
   <h1>1d20</h1>
   <h2>#{outcome}</h2>
   <p><a href=\"/\">Return to homepage</p>
   "
+=end
 end
 
 get("/dice/60/6") do
