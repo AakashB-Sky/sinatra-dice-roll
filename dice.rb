@@ -39,13 +39,17 @@ get("/dice/2/6") do
   second_die = rand(1..6)
   sum = first_die + second_die
 
-  outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+  @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
 
+  erb(:two_six)
+
+=begin # before view templates
   "
   <h1>2d6</h1>
   <h2>#{outcome}</h2>
   <p><a href=\"/\">Return to homepage</a></p>
   "
+=end
 end
 
 get("/dice/2/10") do
@@ -64,16 +68,19 @@ get("/dice/2/10") do
     counter = counter + 1
     outcome = outcome + "Roll # #{counter}: #{the_roll}<br>"
   end
-  outcome = outcome + "Total = #{dice_roll.sum}"
+  @outcome = outcome + "Total = #{dice_roll.sum}"
 
-  # "Test message"
+  erb(:two_ten)
 
+=begin # before using view templates
   "
   <h1>2d10</h1>
   <h2>#{outcome}</h2>
   <p><a href=\"/\">Return to homepage</p>
   "
+=end
 end
+
 
 get("/dice/1/20") do
   number_rolls = 1
